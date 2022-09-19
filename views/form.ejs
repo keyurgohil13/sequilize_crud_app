@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <form class="row g-3" method="post" action="/submitForm">
+                <div class="col-md-6">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="fName">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lName">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4" name="email">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4" name="password">
+                </div>
+                <div class="col-6">
+                    <label for="gender" class="form-label">Gender</label>
+                    <div class="d-flex">
+                        <div class="form-check col-4">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                            <label class="form-check-label" for="male">
+                              Male
+                            </label>
+                        </div>
+                        <div class="form-check col-4">
+                            <input class="form-check-input" type="radio" name="gender" id="female"  value="female">
+                            <label class="form-check-label" for="female">
+                              FeMale
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
+                </div>
+                <% cities = [
+                    'Ahmedabad',
+                    'Amreli district',
+                    'Anand',
+                    'Banaskantha',
+                    'Bharuch',
+                    'Bhavnagar',
+                    'Dahod',
+                    'The Dangs',
+                    'Gandhinagar',
+                    'Jamnagar',
+                    'Junagadh',
+                    'Kutch',
+                    'Kheda',
+                    'Mehsana',
+                    'Narmada',
+                    'Navsari',
+                    'Patan',
+                    'Panchmahal',
+                    'Porbandar',
+                    'Rajkot',
+                    'Sabarkantha',
+                    'Surendranagar',
+                    'Surat',
+                    'Vyara',
+                    'Vadodara',
+                    'Valsad', 
+                    'Ahmednagar',
+                    'Akola',
+                    'Amravati',
+                    'Aurangabad',
+                    'Bhandara',
+                    'Beed',
+                    'Buldhana',
+                    'Chandrapur',
+                    'Dhule',
+                    'Gadchiroli',
+                    'Gondia',
+                    'Hingoli',
+                    'Jalgaon',
+                    'Jalna',
+                    'Kolhapur',
+                    'Latur',
+                    'Mumbai City',
+                    'Mumbai suburban',
+                    'Nandurbar',
+                    'Nanded',
+                    'Nagpur',
+                    'Nashik',
+                    'Osmanabad',
+                    'Parbhani',
+                    'Pune',
+                    'Raigad',
+                    'Ratnagiri',
+                    'Sindhudurg',
+                    'Sangli',
+                    'Solapur',
+                    'Satara',
+                    'Thane',
+                    'Wardha',
+                    'Washim',
+                    'Yavatmal'
+                ] %>
+                <div class="col-md-5">
+                    <label for="inputCity" class="form-label">City</label>
+                    <select id="inputCity" class="form-select" name="cities">
+                        <option selected value="-1">Choose...</option>
+                        <% for(var i =0 ; i<cities.length; i++) { %>
+                            <option value="<%= cities[i] %>">
+                                <%= cities[i] %>
+                            </option>
+                        <% } %> 
+                    </select>
+                </div>
+
+                <% states = [
+                    'Gujarat',
+                    'Maharastra'
+                ] %>
+                <div class="col-md-5">
+                    <label for="inputState" class="form-label">State</label>
+                    <select id="inputState" class="form-select" name="states">
+                        <option selected value="-1">Choose...</option>
+                        <% for(var i = 0; i<states.length; i++) { %>
+                            <option value="<%=states[i] %>">
+                                <%= states[i] %>
+                            </option>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label for="inputZip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
