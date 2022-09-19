@@ -21,7 +21,7 @@ app.set('views',path.join(__dirname, 'views'));
 app.use('/', require('./routes'));
 
 db.sequelize.sync({
-    force : false
+    force : true
 }).then(() => {
     console.log('Sequelize Sync Call');
 })
